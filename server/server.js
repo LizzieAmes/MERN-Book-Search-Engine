@@ -14,6 +14,8 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: authMiddleware,
+  //Disable persisted queries
+  persistedQueries: false,
 });
 
 

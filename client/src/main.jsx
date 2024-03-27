@@ -1,6 +1,9 @@
 import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { ApolloProvider } from '@apollo/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import client from './apolloClient';
+
 
 import App from './App.jsx'
 import SearchBooks from './pages/SearchBooks'
@@ -24,5 +27,7 @@ const router = createBrowserRouter([
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+   <ApolloProvider client={client}>
   <RouterProvider router={router} />
-)
+  </ApolloProvider>
+);

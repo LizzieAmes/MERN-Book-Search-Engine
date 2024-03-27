@@ -19,6 +19,7 @@ const server = new ApolloServer({
 
 async function startApolloServer() {
   await server.start();
+   console.log('Apollo Server started and middleware applied');
   server.applyMiddleware({ app, path: '/graphql' }); 
 
   app.use(express.urlencoded({ extended: true }));
